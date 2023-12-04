@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+*{
+    padding:0;
+    margin:0;
+    font-size:15px;
+    font-family: 'League Spartan', sans-serif; 
+    /*Font weights / 700 / 500*/
+}
+
+body{
+    padding:0;
+    margin:0;
+    background-color: var(--clr-backgroundCyan);
+}
+
+:root{
+    /*PRIMARY*/
+    --clr-dDarkCyan:hsl(180, 29%, 50%);
+
+    /*NEUTRAL*/
+    --clr-backgroundCyan:hsl(180, 52%, 96%);  /*Background*/
+    --clr-filterCyan:hsl(180, 31%, 95%); /*Filter tablets*/
+
+    --clr-darkGCyan:hsl(180, 8%, 52%);
+    --clr-veryDaryGCyan :hsl(180, 14%, 20%);
+
+    --clr-lang:hsla(180, 8%, 55%, 0.26);
+}
+
+/* START------------TEMPLATE AND CONTAINER ------------ START*/
+.template{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--clr-backgroundCyan);
+   
+}
+
+.container {
+    background-color: var(--clr-backgroundCyan);
+
+    max-width: 1536px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    
+  }
+  /* END------------TEMPLATE AND CONTAINER ------------ END*/
+
+  #header-bg-img{
+    width: 100%;
+    height: 20vh;
+    background-color: var(--clr-dDarkCyan);
+    position:absolute;
+    background-image: url(images/bg-header-desktop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #header-container{
+    background-color: white;
+    height: 10vh;
+    width: 80%;
+    position:absolute;
+    left:50%;
+    top:75%;
+    transform:translateX(-50%) ;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lang-container{
+    background-color: transparent;
+    height: 5vh;
+    width: 90%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+  }
+
+  .languange-card{
+    background-color: var(--clr-filterCyan);
+    padding-left: 10px;
+    padding-right: 40px;
+    height: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color:var(--clr-dDarkCyan);
+    font-size: 18px;
+    position:relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .lang-card-x{
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: var(--clr-dDarkCyan);
+    position:absolute;
+    right:0;
+    background-image: url(images/icon-remove.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:50%;
+    transition:300ms;
+  }
+
+  .lang-card-x:hover{
+    background-color:var(--clr-veryDaryGCyan);
+  }
+
+  /*START----------------MAIN BUTTON STYLING ------------ START*/
+  #btnMain{
+    position:absolute;
+    right:2%;
+    top:50%;
+    transform: translateY(-50%);
+
+    background-color: transparent;
+    color: var(--clr-dDarkCyan);
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size:18px;
+    width: 70px;
+    height: 30px;
+  }
+
+  #btnMain::before{
+    content: "";
+    position:absolute;
+    width: 100%;
+    height: 10%;
+    background-color: var(--clr-dDarkCyan);
+    left:0;
+    bottom:0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:300ms;
+  }
+
+  #btnMain:hover::before{
+    transform: scale(1);
+  }
+   /*END----------------MAIN BUTTON STYLING ------------ END*/
+
+   .card-container{
+    width: 1536px;
+    height: auto;
+    position:absolute;
+    top:30vh;
+    background-color: transparent;
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    padding-bottom: 5%;
+   }
+
+   /*START-------------- CARD STYLING ------------------ START*/
+   .card{
+    width: 100%;
+    height: 20vh;
+    background-color: var(--clr-filterCyan);
+    position:relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px black;
+   }
+
+   .card::before{
+    content:"";
+    position:absolute;
+    width: 0.5%;
+    height: 100%;
+    background-color: var(--clr-dDarkCyan);
+
+    transform:scaleY(0);
+    transform-origin: top;
+    transition:300ms;
+   }
+
+   .card:hover::before{
+    transform: scaleY(1);
+   }
+
+   .card:hover .card-position{
+    color:var(--clr-dDarkCyan);
+   }
+   /*END-------------- CARD STYLING ------------------ END*/
+
+   /*START-------------- LEFT SIDE ------------------ START*/
+   .card-img-container{
+    position:absolute;
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    top:50%;
+    transform: translateY(-50%);
+    left:3%;
+    border-radius: 50%;
+   }
+
+   .card-img{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-image: url(images/manage.svg);
+    background-position:center;
+    background-size:cover;
+   }
+
+   .card-new{
+    display:flex;
+
+    position:absolute;
+    left:240%;
+    top:5%;
+    font-weight: 700;
+    color: var(--clr-backgroundCyan);
+    background-color: var(--clr-dDarkCyan);
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .card-featured{
+    display:flex;
+
+    position:absolute;
+    left:300%;
+    top:5%;
+    font-weight: 700;
+    color: var(--clr-backgroundCyan);
+    background-color: var(--clr-veryDaryGCyan);
+    width: 75px;
+    height: 25px;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .card-company-name{
+    position:absolute;
+    font-size: 20px;
+    font-weight: 700;
+    left:130%;
+    top:10%;
+    color:var(--clr-dDarkCyan);
+    width: 200px;
+    height: 20px;
+    background-color: transparent;
+  
+   }
+   
+   .card-position{
+    position:absolute;
+    left:130%;
+    top:38%;
+    color:black;
+    font-size: 25px;
+    font-weight: 700;
+    height: 30px;
+    width: 400px;
+    background-color: transparent;
+    transition:300ms;
+   }
+
+   .card-postedat{
+    position:absolute;
+    left:130%;
+    top:70%;
+    color: var(--clr-darkGCyan);
+    width: 200px;
+    height: 20px;
+    font-weight: 700;
+   }
+   
+   .card-role{
+    position:absolute;
+    left:190%;
+    top:70%;
+    color: var(--clr-darkGCyan);
+    width: 200px;
+    height: 20px;
+    font-weight: 700;
+   }
+
+   .card-location{
+    position:absolute;
+    left:260%;
+    top:70%;
+    color: var(--clr-darkGCyan);
+    width: 200px;
+    height: 20px;
+    font-weight: 700;
+   }
+  /*END-------------- LEFT SIDE ------------------ END*/
+
+  /*START-------------- RIGHT SIDE ------------------ START*/
+  
+  .card-lang-container{
+    position:absolute;
+    right: 1%;
+    top:50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    width: 500px;
+    height: 100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+  }
+
+  .language-btn{
+    font-size: 18px;
+    font-weight: 700;
+    color:var(--clr-dDarkCyan);
+    background-color: var(--clr-lang);
+    width: auto;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    position:relative;
+    overflow: hidden;
+    transition:300ms;
+  }
+
+
+  .language-btn::before{
+    position:absolute;
+    content: "";
+    bottom:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-color:var(--clr-dDarkCyan);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:300ms;
+  }
+
+  .language-btn:hover{
+    color:var(--clr-backgroundCyan);
+    z-index: 1;
+  }
+
+  .language-btn:hover::before{
+    transform: scaleX(1);
+    z-index: -1;
+  }
+   
+  /*END-------------- RIGHT SIDE ------------------ END*/
+
+  
+  /* 2xl */
+  @media (max-width: 1536px) {
+    .container {
+      max-width: 1280px;
+    }
+    .card-container{
+        width: 1280px;
+    }
+  }
+  
+  /* xl */
+  @media (max-width: 1280px) {
+    .container {
+      max-width: 1024px;
+    }
+
+    .card-container{
+        width: 1024px;
+    }
+
+  }
+  
+  /* lg */
+  @media (max-width: 1024px) {
+    .container {
+      max-width: 768px;
+    }
+    .card-container{
+        width: 768px;
+    }
+  }
+  
+  /* md */
+  @media (max-width: 768px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+  
+  /* sm */
+  @media (max-width: 640px) {
+    .container {
+      max-width: 475px;
+    }
+  }
+  
+  /* xs */
+  @media (max-width: 475px) {
+    .container {
+      width: 100%;
+    }
+  }
